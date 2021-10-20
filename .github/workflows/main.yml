@@ -58,11 +58,17 @@ jobs:
         EXCLUDE_FORKED_REPOS: true
 
     # Commits all changed files to the repository
-    - name: Commit to the repo
-      run: |
-        git config --global user.name "jstrieb/github-stats"
-        git config --global user.email "github-stats[bot]@jstrieb.github.io"
-        git add .
-        # "echo" returns true so the build succeeds, even if no changed files
-        git commit -m 'Update generated files' || echo
-        git push
+    - uses: yamatt/backblaze-b2-upload-action@v6
+      with:
+        key_id: ${{ secrets.B2_KEY_ID }}
+        application_key: ${{ secrets.B2_APPLICATION_KEY }}
+        bucket_name: ${{ secrets.B2_BUCKET_NAME }}
+        file_path: generated/languages.svg
+        remote_path: ghstats
+    - uses: yamatt/backblaze-b2-upload-action@v6
+      with:
+        key_id: ${{ secrets.B2_KEY_ID }}
+        application_key: ${{ secrets.B2_APPLICATION_KEY }}
+        bucket_name: ${{ secrets.B2_BUCKET_NAME }}
+        file_path: generated/overview.svg
+        remote_path: ghstats
