@@ -2,8 +2,8 @@
 
 <a href="https://github.com/jstrieb/github-stats">
 
-![](https://cdn.jsdelivr.net/gh/helloimalastair/statistics/generated/overview.svg)
-![](https://cdn.jsdelivr.net/gh/helloimalastair/statistics/generated/languages.svg)
+![](https://cdn.goalastair.com/ghstats/overview.svg)
+![](https://cdn.goalastair.com/ghstats/languages.svg)
 
 </a>
 
