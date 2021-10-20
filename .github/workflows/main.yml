@@ -64,11 +64,11 @@ jobs:
         application_key: ${{ secrets.B2_APPLICATION_KEY }}
         bucket_name: ${{ secrets.B2_BUCKET_NAME }}
         file_path: generated/languages.svg
-        remote_path: ghstats
+        remote_path: ghstats/languages.svg
     - uses: yamatt/backblaze-b2-upload-action@v6
       with:
         key_id: ${{ secrets.B2_KEY_ID }}
         application_key: ${{ secrets.B2_APPLICATION_KEY }}
         bucket_name: ${{ secrets.B2_BUCKET_NAME }}
         file_path: generated/overview.svg
-        remote_path: ghstats
+        remote_path: ghstats/overview.svg
